@@ -3,10 +3,10 @@ from marshmallow import fields, validate
 from glados import ma, constants
 from glados.models import Entity
 
-
 class EntitiesRequestSerializer(ma.Schema):
     type = fields.String(required=False, validate=validate.OneOf([x.name for x in constants.EntityType]))
-
+    room = fields.String(required=False, validate=validate.OneOf(["Bedroom", "Bathroom", "Living Room", "Kitchen"]))
+    status = fields.String(required=False, validate=validate.OneOf([x.name for x in constants.EntityStatus]))
 
 class EntitySerializer(ma.Schema):
     created_at = fields.DateTime("%Y-%m-%dT%H:%M:%S")
