@@ -12,4 +12,4 @@ api.add_resource(misc_resources.VersionAPI, "/")
 
 # Entities endpoints
 api.add_resource(entity_resources.EntitiesAPI, "/entities")
-api.add_resource(entity_resources.EntitiesAPI, "/entities/<int:id>", endpoint="update_entity")
+api.add_resource(entity_resources.EntitiesAPI, "/entities/<uuid:id>", endpoint="update_entity")
